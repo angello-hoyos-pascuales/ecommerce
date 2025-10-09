@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # � ECommerce Llamativo - Plataforma Colombiana con Carrito Flotante Móvil
 
 Un proyecto completo de eCommerce desarrollado con las tecnologías más modernas, incluyendo un **carrito flotante móvil ultra-moderno** para la mejor experiencia de usuario.
@@ -220,3 +221,6 @@ Si encuentras algún bug, por favor:
 ---
 
 **Desarrollado con ❤️ y ☕ por el equipo de ECommerce**
+=======
+# ecommerce
+>>>>>>> a41be54874fdc003d69f288b0e1c8f6ac3ab63b7
