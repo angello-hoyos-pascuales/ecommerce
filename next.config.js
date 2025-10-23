@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Configuración para GitHub Pages
+  output: 'export',
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/ecommerce' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/ecommerce/' : '',
+  
   // Optimizaciones de imágenes
   images: {
+    unoptimized: true, // Necesario para static export
     domains: ['localhost', 'cloudinary.com', 'res.cloudinary.com'],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
