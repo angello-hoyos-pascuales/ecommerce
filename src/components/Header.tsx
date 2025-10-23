@@ -102,6 +102,17 @@ const Header: React.FC = React.memo(() => {
               <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
             </Link>
             
+            {/* Enlace de testing de APIs - visible en desarrollo */}
+            {process.env.NODE_ENV === 'development' && (
+              <Link href="/api-test" className="group relative px-4 py-2 rounded-lg transition-all duration-300 hover:bg-yellow-50">
+                <span className="text-gray-700 group-hover:text-yellow-600 font-medium flex items-center space-x-1">
+                  <span>🧪</span>
+                  <span>API Test</span>
+                </span>
+                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
+              </Link>
+            )}
+            
             {/* Enlace especial de administración - solo visible para admins */}
             {isAdmin() && (
               <Link href="/admin" className="group relative px-4 py-2 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
