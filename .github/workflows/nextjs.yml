@@ -26,19 +26,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
           cache: npm
-          
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
           # Automáticamente inyectar basePath en la configuración de Next.js
           static_site_generator: next
-          
+
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -49,16 +49,16 @@ jobs:
           # Si no hay match exacto, usar la cache más reciente disponible
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-            
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Build with Next.js
         run: npm run build
-        
+
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

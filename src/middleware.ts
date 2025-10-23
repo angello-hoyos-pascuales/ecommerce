@@ -1,25 +1,27 @@
 // Importación de tipos y funciones de Next.js para manejo de middleware
 import { NextRequest, NextResponse } from 'next/server'
 
-// Función middleware que se ejecuta antes de cada request a las rutas especificadas
-// Actúa como interceptor para validar, redirigir o bloquear requests según condiciones
+// Función middleware simplificada que solo funciona en desarrollo
+// Se deshabilita automáticamente para static export en producción
 export function middleware(request: NextRequest) {
-  // Protección durante el proceso de build en producción
-  // Evita errores de conexión a base de datos cuando no está disponible durante deploy
-  if (process.env.NODE_ENV === 'production' && !process.env.MONGODB_URI) {
-    const url = request.nextUrl.clone()
-    // Si el request es a una API route, bloquear con error de servicio no disponible
-    if (url.pathname.startsWith('/api/')) {
-      return NextResponse.json({ error: 'API not available during build' }, { status: 503 })
-    }
+  // Solo ejecutar middleware en desarrollo
+  if (process.env.NODE_ENV !== 'development') {
+    return NextResponse.next()
   }
 
-  // Si no hay restricciones, permitir que el request continúe normalmente
+  // En desarrollo, verificar rutas de API
+  const url = request.nextUrl.clone()
+  if (url.pathname.startsWith('/api/')) {
+    // En desarrollo, permitir todas las API routes
+    return NextResponse.next()
+  }
+
+  // Para todas las demás rutas, continuar normalmente
   return NextResponse.next()
 }
 
-// Configuración que define en qué rutas se ejecuta este middleware
-// Matcher especifica el patrón de rutas donde aplicar el middleware
+// Configuración condicional del middleware
+// Solo activo en desarrollo para evitar conflictos con static export
 export const config = {
-  matcher: '/api/:path*',    // Solo se ejecuta en rutas que empiecen con /api/
+  matcher: process.env.NODE_ENV === 'development' ? '/api/:path*' : [],
 }
