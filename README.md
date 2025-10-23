@@ -1,226 +1,231 @@
-<<<<<<< HEAD
-# � ECommerce Llamativo - Plataforma Colombiana con Carrito Flotante Móvil
+# 🛍️ Llamativo.co - ECommerce Moderno Colombiano
 
-Un proyecto completo de eCommerce desarrollado con las tecnologías más modernas, incluyendo un **carrito flotante móvil ultra-moderno** para la mejor experiencia de usuario.
+**Plataforma de eCommerce completa desarrollada con Next.js, TypeScript y tecnologías modernas para el mercado colombiano.**
 
-## ✨ NUEVO: Carrito Flotante Móvil
+![Estado del Proyecto](https://img.shields.io/badge/Estado-En%20Desarrollo-green)
+![Versión](https://img.shields.io/badge/Versión-0.1.0-blue)
+![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)
 
-### 🎯 **Característica Estrella**
-- **Botón flotante premium** en la parte inferior para móviles
-- **Animaciones avanzadas** con efectos de glow y bounce
-- **Contador dinámico** de productos con badge animado
-- **Total en tiempo real** con formato COP
-- **Solo visible en móviles** - se oculta automáticamente en desktop
+## 🚀 **Características Principales**
 
-### 📱 **Cómo Probarlo**
-1. Abrir el proyecto en `http://localhost:3000`
-2. Ir a `/productos` para ver productos de prueba
-3. Agregar productos al carrito
-4. **Cambiar a vista móvil** en DevTools (F12 → Toggle Device)
-5. ¡Ver el carrito flotante en acción! 🚀
+### ✨ **Funcionalidades Completadas**
+- ✅ **Sistema de Carrito Avanzado** con persistencia automática
+- ✅ **Gestión de Estado Global** con Zustand y migración automática
+- ✅ **Panel de Administración** completo con CRUD de productos
+- ✅ **Autenticación y Autorización** con protección de rutas
+- ✅ **Carrito Flotante Móvil** con animaciones premium
+- ✅ **API REST Completa** para gestión de datos
+- ✅ **Diseño Responsivo** con Tailwind CSS
+- ✅ **Manejo de Variantes** de productos (color, talla)
 
-## 🚀 Stack Tecnológico
+### 🎯 **Características Destacadas**
+- **Migración Automática de Datos**: Sistema robusto para manejar cambios en la estructura del store
+- **Recuperación de Errores**: Limpieza automática de datos corruptos en localStorage
+- **Carrito Persistente**: Mantiene el estado del carrito entre sesiones
+- **Interfaz Moderna**: Diseño premium con gradientes y animaciones
 
-### Frontend
-- **Next.js 15** - Framework de React con App Router
+## �️ **Stack Tecnológico**
+
+### **Frontend**
+- **Next.js 15.5.4** - Framework de React con App Router
 - **TypeScript** - Tipado estático para mayor seguridad
-- **Tailwind CSS** - Framework de CSS utilitario
-- **Zustand** - Gestión de estado global
-- **React Hook Form** - Manejo de formularios
+- **Tailwind CSS** - Framework de CSS utilitario moderno
+- **Zustand 4.4.0** - Gestión de estado global ligera
+- **React Hook Form** - Manejo optimizado de formularios
 
-### Backend
-- **Node.js** - Runtime de JavaScript
-- **Next.js API Routes** - Endpoints de API
-- **MongoDB** - Base de datos NoSQL
-- **Mongoose** - ODM para MongoDB
+### **Backend & Base de Datos**
+- **Next.js API Routes** - Endpoints RESTful integrados
+- **MongoDB con Mongoose** - Base de datos NoSQL escalable
+- **Autenticación JWT** - Sistema de tokens seguros
 
-### Autenticación y Pagos
-- **NextAuth.js** - Autenticación completa
-- **Stripe** - Procesamiento de pagos
-- **JWT** - Tokens de seguridad
-- **bcryptjs** - Hash de contraseñas
+### **Servicios Integrados**
+- **Stripe** - Procesamiento de pagos internacional
+- **Cloudinary** - Gestión y optimización de imágenes
+- **Nodemailer** - Sistema de emails transaccionales
+- **React Hot Toast** - Notificaciones elegantes
 
-### Servicios Adicionales
-- **Cloudinary** - Gestión de imágenes
-- **Nodemailer** - Envío de emails
-- **React Hot Toast** - Notificaciones
+## 📋 **Módulos del Sistema**
 
-## 📋 Características Principales
+### 🛒 **Módulo de Cliente**
+| Funcionalidad | Estado | Descripción |
+|---------------|--------|-------------|
+| Catálogo | ✅ | Vista de productos con filtros |
+| Carrito | ✅ | Gestión completa con persistencia |
+| Checkout | 🚧 | Proceso de compra (en desarrollo) |
+| Perfil | ✅ | Gestión de datos del usuario |
+| Historial | ✅ | Seguimiento de pedidos |
 
-### 🛒 Módulo de Compra (Cliente)
-- ✅ Catálogo de productos con filtros avanzados
-- ✅ Carrito de compras persistente
-- ✅ Checkout seguro con Stripe
-- ✅ Gestión de variantes (color, talla)
-- ✅ Sistema de recomendaciones
-- ✅ Historial de pedidos
-- ✅ Gestión de direcciones
+### 🔧 **Módulo de Administración**
+| Funcionalidad | Estado | Descripción |
+|---------------|--------|-------------|
+| Dashboard | ✅ | Panel principal con métricas |
+| Productos | ✅ | CRUD completo de productos |
+| Pedidos | ✅ | Gestión de órdenes |
+| Usuarios | 🚧 | Administración de clientes |
+| Reportes | 🚧 | Analytics y estadísticas |
 
-### 🔧 Módulo de Administración
-- ✅ CRUD completo de productos
-- ✅ Gestión de inventario
-- ✅ Administración de pedidos
-- ✅ Reportes de ventas
-- ✅ Gestión de usuarios
-- ✅ Dashboard con métricas
+### 🔐 **Sistema de Autenticación**
+- **Registro/Login** con validación completa
+- **Roles de usuario**: Cliente y Administrador
+- **Protección de rutas** automática
+- **Gestión de sesiones** persistente
 
-### 🔐 Sistema de Autenticación
-- ✅ Registro e inicio de sesión
-- ✅ Autenticación con JWT
-- ✅ Roles de usuario (cliente/admin)
-- ✅ Protección de rutas
-- ✅ Recuperación de contraseña
+## 🏗️ **Arquitectura del Proyecto**
 
-### 💳 Integración de Pagos
-- ✅ Procesamiento con Stripe
-- ✅ Múltiples métodos de pago
-- ✅ Manejo de webhooks
-- ✅ Confirmación de pagos
-- ✅ Reembolsos automáticos
+```
+ECOMER/
+├── 📁 src/
+│   ├── 📁 app/                    # App Router (Next.js 13+)
+│   │   ├── � api/               # API Routes RESTful
+│   │   │   └── 📁 products/      # Endpoints de productos
+│   │   ├── 📁 admin/             # Panel de administración
+│   │   ├── 📁 products/          # Páginas de productos
+│   │   ├── 📁 cart/              # Carrito de compras
+│   │   ├── 📁 checkout/          # Proceso de compra
+│   │   └── 📁 auth/              # Autenticación
+│   ├── 📁 components/            # Componentes reutilizables
+│   │   ├── Header.tsx            # Navegación principal
+│   │   ├── FloatingCart.tsx      # Carrito flotante móvil
+│   │   ├── CartInitializer.tsx   # Inicializador de carrito
+│   │   └── AdminProtected.tsx    # Protección de rutas admin
+│   ├── 📁 store/                 # Gestión de estado (Zustand)
+│   │   ├── cartStore.ts          # Estado del carrito
+│   │   └── authStore.ts          # Estado de autenticación
+│   ├── 📁 lib/                   # Configuraciones y utilidades
+│   ├── 📁 models/                # Modelos de datos (MongoDB)
+│   ├── 📁 types/                 # Definiciones de TypeScript
+│   └── 📁 context/               # Contextos de React
+├── 📁 public/                    # Archivos estáticos
+└── 📄 Archivos de configuración
+```
 
-## 🛠️ Instalación y Configuración
+## � **Instalación y Configuración**
 
-### Prerrequisitos
-- Node.js 18+ 
-- MongoDB (local o MongoDB Atlas)
-- Cuenta de Stripe para pagos
-- Cuenta de Cloudinary (opcional)
+### **Prerrequisitos**
+- Node.js 18.0+ 
+- MongoDB (local o Atlas)
+- Git
 
-### 1. Clona el repositorio
-\`\`\`bash
-git clone <tu-repositorio>
-cd ECOMER
-\`\`\`
+### **1. Clonar el Repositorio**
+```bash
+git clone https://github.com/angello-hoyos-pascuales/ecommerce.git
+cd ecommerce
+```
 
-### 2. Instala las dependencias
-\`\`\`bash
+### **2. Instalar Dependencias**
+```bash
 npm install
-\`\`\`
+```
 
-### 3. Configura las variables de entorno
-Copia el archivo \`.env.example\` a \`.env.local\` y actualiza las variables:
+### **3. Configurar Variables de Entorno**
+Crear archivo `.env.local` basado en `.env.example`:
 
-\`\`\`env
-# Base de datos MongoDB
-MONGODB_URI=mongodb://localhost:27017/ecomer-db
-
-# Stripe para pagos
-STRIPE_PUBLIC_KEY=pk_test_tu_clave_publica
-STRIPE_SECRET_KEY=sk_test_tu_clave_secreta
+```env
+# Base de datos
+MONGODB_URI=mongodb://localhost:27017/llamativo-db
 
 # JWT para autenticación
-JWT_SECRET=tu_jwt_secret_muy_secreto
+JWT_SECRET=tu_jwt_secret_super_seguro
 
-# Cloudinary (opcional)
-CLOUDINARY_CLOUD_NAME=tu_cloud_name
-CLOUDINARY_API_KEY=tu_api_key
-CLOUDINARY_API_SECRET=tu_api_secret
+# Stripe (opcional para pagos)
+STRIPE_PUBLIC_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
 
-# URL base
+# Base URL
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
-\`\`\`
+```
 
-### 4. Ejecuta la aplicación
-\`\`\`bash
-# Modo desarrollo
+### **4. Ejecutar la Aplicación**
+```bash
+# Desarrollo
 npm run dev
 
-# Modo producción
-npm run build
-npm start
-\`\`\`
+# Producción
+npm run build && npm start
+```
 
-La aplicación estará disponible en [http://localhost:3000](http://localhost:3000)
+**🌐 Aplicación disponible en:** [http://localhost:3000](http://localhost:3000)
 
-## 📁 Estructura del Proyecto
+## � **Últimas Actualizaciones (v0.1.0)**
 
-\`\`\`
-ECOMER/
-├── src/
-│   ├── app/                    # App Router de Next.js
-│   │   ├── api/               # Rutas de API
-│   │   ├── admin/             # Panel de administración
-│   │   ├── products/          # Páginas de productos
-│   │   ├── cart/              # Carrito de compras
-│   │   └── auth/              # Autenticación
-│   ├── components/            # Componentes reutilizables
-│   ├── lib/                   # Utilidades y configuraciones
-│   ├── models/                # Modelos de MongoDB
-│   ├── store/                 # Gestión de estado global
-│   ├── types/                 # Tipos de TypeScript
-│   └── utils/                 # Funciones utilitarias
-├── public/                    # Archivos estáticos
-└── package.json
-\`\`\`
+### **🆕 Funcionalidades Agregadas**
+- **Sistema de Migración Automática**: Manejo robusto de cambios en el store de Zustand
+- **Recuperación de Errores**: Limpieza automática de datos corruptos en localStorage
+- **CartInitializer**: Componente para inicialización segura del carrito
+- **Validación de Datos**: Sistema completo de validación de estructura de datos
+- **Logging Mejorado**: Sistema de logs para debugging y monitoreo
 
-## 🎯 Funcionalidades por Implementar
+### **🔧 Correcciones**
+- ✅ Resuelto error: "State loaded from storage couldn't be migrated"
+- ✅ Mejorado manejo de persistencia en Zustand
+- ✅ Optimizada carga inicial del carrito
+- ✅ Implementada migración de versiones de datos
 
-### 🔄 Fase 1: Core Features (Completado)
-- [x] Configuración del proyecto
-- [x] Modelos de datos
-- [x] Autenticación básica
-- [x] CRUD de productos
-- [x] Carrito de compras
+### **⚡ Optimizaciones**
+- Incrementada versión del store para forzar limpieza de datos incompatibles
+- Mejorado rendimiento de la carga inicial
+- Optimizada serialización/deserialización de datos
+- Sistema de fallback para errores de parsing
 
-### 🔄 Fase 2: Características Avanzadas
+## 🎯 **Roadmap de Desarrollo**
+
+### **🔄 Fase Actual (v0.1.x)**
+- [x] Corrección de sistema de carrito
+- [x] Implementación de migración automática
 - [ ] Integración completa de Stripe
-- [ ] Sistema de recomendaciones con IA
-- [ ] Optimización de imágenes con Cloudinary
-- [ ] Sistema de reseñas y calificaciones
-- [ ] Búsqueda avanzada con filtros
+- [ ] Sistema de notificaciones push
+- [ ] Optimización de imágenes
 
-### 🔄 Fase 3: Optimizaciones
-- [ ] Cache con Redis
-- [ ] Optimización SEO
-- [ ] PWA (Progressive Web App)
-- [ ] Tests automatizados
-- [ ] CI/CD con GitHub Actions
+### **🚀 Próximas Fases**
+- **v0.2.0**: Integración de pagos completa
+- **v0.3.0**: Sistema de recomendaciones con IA
+- **v0.4.0**: PWA y optimizaciones móviles
+- **v1.0.0**: Lanzamiento oficial
 
-## 🚀 Despliegue
+## � **Métricas del Proyecto**
 
-### Vercel (Recomendado)
-\`\`\`bash
-npm i -g vercel
-vercel
-\`\`\`
+- **Componentes Creados**: 15+
+- **Páginas Implementadas**: 12+
+- **API Endpoints**: 8+
+- **Tipos TypeScript**: 25+
+- **Líneas de Código**: 2000+
 
-### Docker
-\`\`\`bash
-docker build -t ecomer-app .
-docker run -p 3000:3000 ecomer-app
-\`\`\`
+## 🤝 **Contribuir al Proyecto**
 
-## 🤝 Contribuciones
+### **Proceso de Contribución**
+1. Fork del repositorio
+2. Crear rama feature: `git checkout -b feature/nueva-funcionalidad`
+3. Commit cambios: `git commit -m 'Agregar nueva funcionalidad'`
+4. Push a la rama: `git push origin feature/nueva-funcionalidad`
+5. Crear Pull Request
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (\`git checkout -b feature/amazing-feature\`)
-3. Commit tus cambios (\`git commit -m 'Add amazing feature'\`)
-4. Push a la rama (\`git push origin feature/amazing-feature\`)
-5. Abre un Pull Request
+### **Estándares de Código**
+- Usar TypeScript para tipado estático
+- Seguir convenciones de naming de React/Next.js
+- Documentar componentes y funciones complejas
+- Mantener cobertura de tipos del 100%
 
-## 📄 Licencia
+## 🐛 **Reporte de Issues**
 
-Este proyecto está bajo la licencia MIT. Ver el archivo \`LICENSE\` para más detalles.
-
-## 🐛 Reporte de Bugs
-
-Si encuentras algún bug, por favor:
-1. Verifica que no esté ya reportado en los Issues
-2. Crea un nuevo Issue con:
-   - Descripción detallada del problema
+Para reportar bugs o solicitar nuevas funcionalidades:
+1. Verificar que no esté ya reportado
+2. Crear issue detallado con:
+   - Descripción clara del problema
    - Pasos para reproducir
-   - Capturas de pantalla si es necesario
-   - Información del entorno (OS, Browser, etc.)
+   - Capturas de pantalla
+   - Información del entorno
 
-## 📞 Soporte
+## � **Licencia**
 
-- 📧 Email: contacto@ecommerce.com
-- 💬 Discord: [Enlace al servidor]
-- 📖 Documentación: [Enlace a la wiki]
+Este proyecto está bajo la **Licencia MIT**. Ver archivo `LICENSE` para más detalles.
+
+## 👨‍� **Desarrollador**
+
+**Angello Hoyos Pascuales**
+- GitHub: [@angello-hoyos-pascuales](https://github.com/angello-hoyos-pascuales)
+- Proyecto: [ecommerce](https://github.com/angello-hoyos-pascuales/ecommerce)
 
 ---
 
-**Desarrollado con ❤️ y ☕ por el equipo de ECommerce**
-=======
-# ecommerce
->>>>>>> a41be54874fdc003d69f288b0e1c8f6ac3ab63b7
+**Desarrollado con ❤️ en Colombia 🇨🇴 | Impulsado por Next.js y TypeScript**
