@@ -124,7 +124,89 @@ export const useCartStore = create<CartStore>()(
     {
       // Configuración del middleware de persistencia
       name: 'cart-storage',    // Nombre de la key en localStorage
-      version: 1,              // Versión para futuras migraciones de datos
+      version: 2,              // Incrementada para forzar limpieza de datos incompatibles
+      
+      // Función de migración para manejar cambios en la estructura del store
+      migrate: (persistedState: any, version: number) => {
+        // Si la versión es anterior a 2, limpiar datos y empezar de nuevo
+        if (version < 2) {
+          console.log('Migrando carrito a versión 2, limpiando datos anteriores...')
+          return {
+            items: [],
+            total: 0,
+            itemCount: 0,
+          }
+        }
+        
+        // Si no hay estado persistido, retornar estado inicial
+        if (!persistedState) {
+          return {
+            items: [],
+            total: 0,
+            itemCount: 0,
+          }
+        }
+        
+        // Validar que el estado persistido tenga la estructura correcta
+        if (persistedState && typeof persistedState === 'object') {
+          // Asegurar que items es un array válido
+          const items = Array.isArray(persistedState.items) ? persistedState.items : []
+          
+          // Validar cada item del carrito
+          const validItems = items.filter((item: any) => 
+            item && 
+            typeof item.productId === 'string' &&
+            typeof item.name === 'string' &&
+            typeof item.price === 'number' &&
+            typeof item.quantity === 'number' &&
+            typeof item.image === 'string' &&
+            item.variant &&
+            typeof item.variant.color === 'string' &&
+            typeof item.variant.size === 'string'
+          )
+          
+          // Recalcular totales basados en items válidos
+          const total = validItems.reduce((sum: number, item: CartItem) => sum + item.price * item.quantity, 0)
+          const itemCount = validItems.reduce((sum: number, item: CartItem) => sum + item.quantity, 0)
+          
+          return {
+            items: validItems,
+            total,
+            itemCount,
+          }
+        }
+        
+        // Si el estado no es válido, retornar estado inicial
+        return {
+          items: [],
+          total: 0,
+          itemCount: 0,
+        }
+      },
+      
+      // Función de serialización personalizada para asegurar datos válidos
+      serialize: (state) => JSON.stringify(state),
+      
+      // Función de deserialización personalizada con validación
+      deserialize: (str) => {
+        try {
+          return JSON.parse(str)
+        } catch {
+          // Si hay error al parsear, retornar estado inicial
+          return {
+            items: [],
+            total: 0,
+            itemCount: 0,
+          }
+        }
+      },
     }
   )
 )
+
+// Función utilitaria para limpiar el localStorage en caso de problemas
+export const clearCartStorage = () => {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('cart-storage')
+  }
+}

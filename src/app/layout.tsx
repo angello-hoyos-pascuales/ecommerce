@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import FloatingCart from '@/components/FloatingCart'
+import CartInitializer from '@/components/CartInitializer'
 import { AuthProvider } from '@/context/AuthContext'
 
 // Configuración de la fuente Inter de Google Fonts optimizada para Next.js
@@ -32,6 +33,8 @@ export default function RootLayout({
         {/* Provider de autenticación que envuelve toda la aplicación */}
         {/* Proporciona estado de usuario y funciones de auth a todos los componentes hijos */}
         <AuthProvider>
+          {/* Inicializador del carrito para manejar migración de datos */}
+          <CartInitializer />
           {/* Contenedor principal con altura mínima completa y layout flexbox */}
           {/* Establece la estructura base: header fijo, contenido flexible, footer */}
           <div className="min-h-screen bg-gray-50 flex flex-col">
