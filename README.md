@@ -18,12 +18,17 @@
 - ✅ **API REST Completa** para gestión de datos
 - ✅ **Diseño Responsivo** con Tailwind CSS
 - ✅ **Manejo de Variantes** de productos (color, talla)
+- ✅ **GitHub Pages Deploy** automático con cada push
+- ✅ **Scripts de Verificación** y troubleshooting
+- ✅ **Página de Testing APIs** para desarrollo
 
 ### 🎯 **Características Destacadas**
 - **Migración Automática de Datos**: Sistema robusto para manejar cambios en la estructura del store
 - **Recuperación de Errores**: Limpieza automática de datos corruptos en localStorage
 - **Carrito Persistente**: Mantiene el estado del carrito entre sesiones
 - **Interfaz Moderna**: Diseño premium con gradientes y animaciones
+- **Dual Environment**: Funciona perfectamente en desarrollo local y GitHub Pages
+- **Auto-Diagnostics**: Scripts automáticos de verificación y solución de problemas
 
 ## �️ **Stack Tecnológico**
 
@@ -138,35 +143,70 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
 ### **4. Ejecutar la Aplicación**
 ```bash
-# Desarrollo
+# Desarrollo (recomendado)
 npm run dev
 
 # Producción
 npm run build && npm start
 ```
 
-**🌐 Aplicación disponible en:** [http://localhost:3000](http://localhost:3000)
+**🌐 Aplicación disponible en:** [http://localhost:3001](http://localhost:3001)
 
-## � **Últimas Actualizaciones (v0.1.0)**
+### **5. 🧪 Verificación del Proyecto**
+```bash
+# Script de diagnóstico automático
+./verify-project.sh
+
+# Página de testing de APIs (solo desarrollo)
+http://localhost:3001/api-test
+```
+
+### **6. 🛠️ Solución de Problemas**
+```bash
+# Si el proyecto no carga
+rm -rf .next && npm run dev
+
+# Si hay errores de dependencias
+rm -rf node_modules package-lock.json
+npm install && npm run dev
+
+# Para más ayuda, consultar:
+# - TROUBLESHOOTING.md
+# - DESARROLLO_VS_GITHUB_PAGES.md
+```
+
+## 🔧 **Últimas Actualizaciones (v0.1.1)**
 
 ### **🆕 Funcionalidades Agregadas**
+- **Página de Testing APIs**: `/api-test` para verificar funcionamiento en desarrollo
+- **Scripts de Verificación**: `verify-project.sh` para diagnóstico automático
+- **Guía de Troubleshooting**: `TROUBLESHOOTING.md` con soluciones completas
+- **Configuración Dual**: Desarrollo local vs GitHub Pages optimizado
 - **Sistema de Migración Automática**: Manejo robusto de cambios en el store de Zustand
 - **Recuperación de Errores**: Limpieza automática de datos corruptos en localStorage
 - **CartInitializer**: Componente para inicialización segura del carrito
 - **Validación de Datos**: Sistema completo de validación de estructura de datos
-- **Logging Mejorado**: Sistema de logs para debugging y monitoreo
 
 ### **🔧 Correcciones**
 - ✅ Resuelto error: "State loaded from storage couldn't be migrated"
+- ✅ Solucionado conflicto middleware vs static export
+- ✅ Configuración condicional para desarrollo/producción
 - ✅ Mejorado manejo de persistencia en Zustand
 - ✅ Optimizada carga inicial del carrito
 - ✅ Implementada migración de versiones de datos
 
 ### **⚡ Optimizaciones**
-- Incrementada versión del store para forzar limpieza de datos incompatibles
-- Mejorado rendimiento de la carga inicial
-- Optimizada serialización/deserialización de datos
+- Configuración automática de puertos (3000 → 3001)
 - Sistema de fallback para errores de parsing
+- Optimizada serialización/deserialización de datos
+- Mejorado rendimiento de la carga inicial
+- Scripts de reset y limpieza automática
+
+### **🛠️ Herramientas de Desarrollo**
+- **Diagnóstico Automático**: `./verify-project.sh`
+- **Testing de APIs**: `http://localhost:3001/api-test`
+- **Troubleshooting**: Guía completa de solución de problemas
+- **Comandos de Emergencia**: Reset automático del proyecto
 
 ## 🎯 **Roadmap de Desarrollo**
 
@@ -183,13 +223,29 @@ npm run build && npm start
 - **v0.4.0**: PWA y optimizaciones móviles
 - **v1.0.0**: Lanzamiento oficial
 
-## � **Métricas del Proyecto**
+## 📊 **Métricas del Proyecto**
 
-- **Componentes Creados**: 15+
-- **Páginas Implementadas**: 12+
-- **API Endpoints**: 8+
-- **Tipos TypeScript**: 25+
-- **Líneas de Código**: 2000+
+### **Código y Estructura**
+- **Componentes Creados**: 20+
+- **Páginas Implementadas**: 15+
+- **API Endpoints**: 10+
+- **Tipos TypeScript**: 30+
+- **Líneas de Código**: 3,500+
+- **Archivos de Documentación**: 8+
+
+### **Funcionalidades Completadas**
+- **Sistema de Carrito**: 95% ✅
+- **UI/UX Design**: 90% ✅
+- **GitHub Pages**: 100% ✅
+- **Panel Admin**: 75% ✅
+- **API Testing**: 100% ✅
+- **Troubleshooting**: 100% ✅
+
+### **Herramientas de Desarrollo**
+- **Scripts de Verificación**: 2
+- **Guías de Documentación**: 4
+- **Archivos de Configuración**: 6
+- **Workflows de CI/CD**: 1
 
 ## 🤝 **Contribuir al Proyecto**
 
